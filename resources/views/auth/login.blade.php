@@ -1,0 +1,34 @@
+<x-layout.app>
+    <div id="login-div" class="flex items-center justify-center min-h-screen bg-no-repeat bg-cover" style="background-image: url('{{ asset('storage/uploads/login_bg.jpg') }}">
+        <div class="px-8 py-6 mt-4 text-left bg-gray-100 shadow-md rounded" style="background-image: url('{{ asset('storage/eximage/bg3.png') }}'); background-size: 35px 35px;">
+            <h3 class="text-2xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-gray-900">HotPlate</h3>
+            <form action="/login" method="POST">
+                @csrf
+                <!-- Alert -->
+                <div id="auth-alert" class="hidden flex p-3 mb-4 mt-2 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50" role="alert">
+                    <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="sr-only">Info</span>
+                    <div id="alert-msg">
+                        <!-- ALert Goes here -->
+                    </div> 
+                </div>
+                <div class="mt-4">
+                    <div>
+                        <label class="block text-gray-700" for="email">Username<label>
+                        <input type="text" name="email" id="username" maxlength="40" placeholder="Enter username" class="border-gray-300 w-full px-4 py-2 mt-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-600 text-gray-900" required>
+                    </div>
+                    <div class="mt-4">
+                        <label class="block text-gray-700">Password<label>
+                        <input type="password" name="password" id="password" maxlength="30" autocomplete="off" placeholder="Enter password" class="border-gray-300 w-full px-4 py-2 mt-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-600 text-gray-900" required>
+                    </div>
+                    <div class="flex items-baseline justify-between mt-2">
+                        <a href="#" id="forgot" class="text-sm text-blue-600 hover:underline">Forgot your password?</a>
+                        <button type="submit" class="px-6 py-2 font-medium border rounded-md border-gray-500 hover:border-gray-50 mt-2 bg-gradient-to-r from-red-500 to-gray-700 text-white hover:text-red-200">Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</x-layout.app>
