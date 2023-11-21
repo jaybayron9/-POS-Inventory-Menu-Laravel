@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id('order_id');
             $table->integer('invoice_no')->nullable();
-            $table->string('customer_name', 50)->nullable();
+            $table->string('products', 50)->nullable();
             $table->string('total_amount', 20)->nullable();
             $table->string('discount_percent', 20)->nullable();
             $table->string('total_discount_amount', 20)->nullable();
