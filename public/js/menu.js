@@ -339,8 +339,9 @@ $('#print-receipt').click(function () {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }, 
             success: function (response) {
+                console.log(response);
                 if (response.status == 'success') {
-                    $('#menu-list').html('<object data="/show/receipt" type="application/pdf" class="w-full h-full">');
+                    $('#menu-list').html('<object data="/show/receipt" type="application/pdf" class="h-full w-full">');
                     $('#print-receipt').slideUp();
                     $('#send-request').removeClass('hidden').fadeIn();
                     $('.delete-button').addClass('hidden');

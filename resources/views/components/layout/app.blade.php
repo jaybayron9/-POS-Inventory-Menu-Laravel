@@ -8,7 +8,7 @@
         <title>HotPlate POS</title>
 
         <script src="{{ asset('js/jquery.js') }}" crossorigin="anonymous"></script>
-        <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+        <script src="{{ asset('js/sweetalert.min.js') }}"></script> 
         @vite(['resources/css/app.css','resources/js/app.js'])
         {{ $links ?? '' }}
     </head>

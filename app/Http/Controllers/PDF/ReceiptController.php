@@ -36,7 +36,7 @@ class ReceiptController extends Controller
         $pdf->Cell(60,3.5, $setting->URL ,0,1,'C');
         $pdf->Cell(60,3.5,$setting->email ,0,1,'C');
         $pdf->Cell(60,3.5,'+63 ' .  $setting->contact_no ,0,1,'C');
-        $pdf->Cell(60,3.5,'BUS. TIN : ' .  $setting->bussiness_tin ,0,1,'C');
+        $pdf->Cell(60,3.5,'BUS. TIN : ' .  $setting->business_tin ,0,1,'C');
 
         // $pdf->SetX(7);
         $pdf->SetFont('courier','',12);

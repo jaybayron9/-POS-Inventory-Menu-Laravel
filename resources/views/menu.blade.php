@@ -1,7 +1,7 @@
 <x-layout.app>
     <x-layout.navbar />
     <section class="pt-5 pb-8 mx-4 grid grid-cols-7 gap-4"> 
-        <div id="menu-list" class="col-span-5 mb-6 border border-gray-200 shadow-lg bg-gray-50">
+        <div id="menu-list" class="col-span-5 mb-6 border border-gray-200 shadow-lg bg-gray-50 h-full">
             <div class="flex items-center py-2 px-4 border-b border-gray-300 shadow bg-white"> 
                 <div class="inline-flex" role="group">
                     <button id="nav-meals" type="button" class="inline-flex items-center px-4 py-1 text-sm font-medium text-gray-900 bg-transparent border border-gray-900 rounded-s-lg hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white">

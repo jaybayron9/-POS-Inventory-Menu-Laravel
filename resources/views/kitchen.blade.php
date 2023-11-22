@@ -108,13 +108,13 @@
                     .then((willDone) => {
                         if (willDone) {
                             $.ajax({
-                                type: "POST",
-                                url: "index.php?a=up_order",
-                                data: {
-                                    order_id: $(this).data('row-data')
+                                type: "GET",
+                                url: `/order/serve/${$(this).data('row-data')}`, 
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                                 },
-                                dataType: 'json',
-                                success: function(response) {
+                                success: function(response) { 
+                                    console.log(response);
                                     if (response.status == 'success') {
                                         location.reload() 
                                     } else {
@@ -124,7 +124,7 @@
                                             icon: "error",
                                             confirmationbutton: true,
                                             dangerMode: true,
-                                        }).swal(() => { location.reload() });
+                                        }).then(() => { location.reload() });
                                     }
                                 }
                             });
@@ -140,15 +140,10 @@
                         dangerMode: true,
                     })
                     .then((willDone) => {
-                        if (willDone) {
-                            var id = $(this).data('row-data');
+                        if (willDone) { 
                             $.ajax({
-                                type: "POST",
-                                url: "index.php?a=cancel_orders",
-                                data: {
-                                    order_id: id,
-                                },
-                                dataType: 'json',
+                                type: "GET",
+                                url: `/order/cancel/${$(this).data('row-data')}`, 
                                 success: function(response) {
                                     if (response.status == 'success') {
                                         location.reload();
@@ -159,7 +154,7 @@
                                             icon: "error",
                                             confirmationbutton: true,
                                             dangerMode: true,
-                                        }).swal(() => { location.reload() });
+                                        }).then(() => { location.reload() });
                                     }
                                 }
                             });

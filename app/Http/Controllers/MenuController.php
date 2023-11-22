@@ -91,6 +91,6 @@ class MenuController extends Controller
             'note',
             'discount',
             'invoice_no'
-        ]);
+        ]); 
     }
 }
