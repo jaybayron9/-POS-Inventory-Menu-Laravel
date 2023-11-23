@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index(){  
+    public function index(){
         return view('product', [
-            'products' => Product::all()
+            'products' => fn($category) => 
+                            Product::where('category', $category)
+                                ->get()
         ]);
     }
 }

@@ -1,16 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route; 
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UnpaidController;
 use App\Http\Controllers\KitchenController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PDF\ReceiptController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\PDF\DailyReportController;
 
-Route::get('/', [LoginController::class, 'index'])->name('auth.login');
+Route::get('/', [LoginController::class, 'index'])->name('home');
+Route::get('/login', [LoginController::class, 'index'])->name('auth.login');
 Route::post('/login', [LoginController::class, 'login']); 
 
 Route::middleware(['auth' => 'admin'])->group(function() { 
@@ -59,9 +61,10 @@ Route::middleware(['auth' => 'admin'])->group(function() {
         Route::get('/dashboard/total_staffs', 'total_staffs');
         Route::get('/dashboard/product_best', 'product_best');
         Route::get('/dashboard/unavailable_product', 'unavailable_product');
-        Route::get('/dashboard/available_product', 'available_product');
+        Route::get('/dashboard/available_product', 'available_product'); 
     });
 
     Route::get('/show/receipt', [ReceiptController::class, 'show_receipt']);
+    Route::get('/dashboard/daily_report', [DailyReportController::class, 'daily_report']);
     Route::post('/logout', [LoginController::class, 'logout']);
 });

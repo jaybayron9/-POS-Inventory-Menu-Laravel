@@ -136,9 +136,9 @@
             $('#unvailable').load('/dashboard/unavailable_product');
             $('#available').load('/dashboard/available_product');
 
-            // $('#daily-report-btn').click(function() {
-            //     $('#show-daily-report').html('<object data="pdf-gen-daily-report.php" type="application/pdf" class="w-full h-screen">').removeClass("space-y-8 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-6 space-y-0");
-            // });
+            $('#daily-report-btn').click(function() {
+                $('#show-daily-report').html('<object data="/dashboard/daily_report" type="application/pdf" class="w-full h-screen">').removeClass("space-y-8 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-6 space-y-0");
+            });
         </script>
     </x-slot:scripts>
 </x-layout.app>
